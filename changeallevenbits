@@ -1,0 +1,17 @@
+class Solution {
+  public:
+    long long int convertEvenBitToZero(long long int n) {
+          int to_subtract = 0;
+ 
+    int m = 0;
+ 
+    // One by one put all even  bits to end
+    for (int x = n; x; x >>= 2) {
+        if (x & 1)
+            to_subtract += (1 << m);
+         m += 2;
+    }
+     return n - to_subtract;
+        
+    }
+};
